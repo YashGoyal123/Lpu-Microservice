@@ -1,0 +1,12 @@
+server.port=9093
+spring.application.name=APIGateway
+eureka.client.service-url.defaultZone=http://localhost:9089/eureka
+eureka.client.instance.preferIpAddress=true
+
+spring.cloud.gateway.routes[0].id=UserService
+spring.cloud.gateway.routes[0].uri=lb://UserService
+spring.cloud.gateway.routes[0].predicates[0]=Path=/user/**
+
+spring.cloud.gateway.routes[1].id=ContactService
+spring.cloud.gateway.routes[1].uri=lb://ContactService
+spring.cloud.gateway.routes[1].predicates[0]=Path=/contact/**
