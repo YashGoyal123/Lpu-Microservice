@@ -15,6 +15,7 @@ public class ContactController {
 		ContactServiceImplementation cs;
 		@GetMapping("/user/{id}")
 		public List<Contact>getContact(@PathVariable Long id) {
+			System.out.println("Contact Controller");
 			return this.cs.getContactofUser(id);
 		}
 	}
